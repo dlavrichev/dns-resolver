@@ -47,9 +47,12 @@ region = "us-east-1"
 vpc-id = "vpc-xxxxxxxxxxxxxxxx"
 
 # Subnet(s) where resolver endpoint is present
-subnet-ids = ["subnet-xxxxxxxxxxxxxx","subnet-yyyyyyyyyyyyyyyyy"]
+subnet-ids = ["subnet-xxxxxxxxxxxxxx","subnet-yyyyyyyyyyyyyyy"]
 #keep in mind that 'endpoint-ips' should be in the same corresponding subnet from 'subnet-ids'
 endpoint-ips = ["10.10.5.250","10.10.6.250"]
+
+# List of VPCs that need to be associated (in other words, need to be able to resolve internal DNS)
+associated-vpc-ids = ["vpc-xxxxxxxxxxxxxx","vpc-yyyyyyyyyyyyy","vpc-zzzzzzzzzzzzz"]
 
 #below is the list of IPs of DNS servers that used as forwarders
 forwarders = ["10.10.1.250","10.10.2.250"]
