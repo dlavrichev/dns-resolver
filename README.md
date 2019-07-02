@@ -35,7 +35,7 @@ provider "aws" {
 }
 
 module "dns-resolver" {
-  source = "git::https://github.com/dns-resolver.git"
+  source = "git::https://github.com/dlavrichev/dns-resolver.git"
 
 environment = "prod"
 team_name = "network"
