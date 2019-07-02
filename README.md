@@ -6,9 +6,7 @@
 * [How to use this modle](#how-to-use-this-modle)
 
 ## Description
-This script creates a Route53 resolver (using Terraform module stored in github) in the existing VPC. Resolver endpoint must be present in at least 2 availability zones or have 2 IP addresses within the same subnet. Security group, needed for this resolver also gets created here. Then all necessary resolver rules get created. 
- Once all the rules are in place, the resource share is being created as well and can be shared with another account or OU.
- Once it is shared, all VPC are associated with these resolver rules
+This script creates a Route53 resolver (using Terraform module stored in github) in the existing VPC. This is used when a VPC has Amazon provided DNS and still needs to perform DNS resolution for local DNS zones that are not present within Route 53. Resolver endpoint must be present in at least 2 availability zones or have 2 IP addresses within the same subnet. Security group, needed for this resolver also gets created here. Then all necessary resolver rules get created. Once all the rules are in place, the resource share is being created as well and can be shared with another account or OU.Once it is shared, all VPC are associated with these resolver rules
 
 ## Current list of resolver rules
 * 10.in-addr.arpa. reverse lookup zone.
@@ -24,7 +22,7 @@ be added.
 ```
 
 terraform {
-  # 
+  # s3 bucket is used to store terraform state for later modifications
   backend "s3" {
     bucket = "tfstate-bucket"
     key = "network/dns-resolver/terraform.tfstate"
