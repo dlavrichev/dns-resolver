@@ -3,11 +3,11 @@ variable "region" {
   default     = "us-east-1"
 }
 variable "environment" {
-  description = "Account environment type (should be one of dev, prod, uat or sandbox)"
+  description = "Account environment type (should be one of dev, prod, uat)"
   default     = "dev"
 }
 variable "team_name" {
-  description = "Name of SBU or team that will support resources in this account.  For enterprise hosting, should be three letter customer identifier"
+  description = "Name of a team that will support resources in this account.
   default     = ""
 }
 variable "vpc-id" {
