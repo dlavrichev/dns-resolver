@@ -12,7 +12,7 @@ This script creates a Route53 resolver (using Terraform module stored in github)
 * 10.in-addr.arpa. reverse lookup zone.
 * lavrichev.com. forward zone.
 
-## How to use this modle
+## How to use this module
 This module will require terraform version 0.12.1
 Generally, Resolver gets installed once per region. Resolver must be created in existing VPC. Resolver endpoint must have at least 2 IP addresses. They can belong to a single subnet (AZ) or be in different AZs for redundancy. Script also allowes to choose which IPs should be assigned to endpoint in each AZ ('endpoint-ips' variable is used for this purpose.)
 
